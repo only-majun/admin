@@ -1,0 +1,536 @@
+define({ "api": [
+  {
+    "type": "post",
+    "url": "/admin/file/upload",
+    "title": "文件上传",
+    "name": "upload",
+    "group": "_file",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "img",
+            "description": "<p>formdata 格式图片</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>令牌</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "err",
+            "description": "<p>错误码</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>错误信息</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "imgpath",
+            "description": "<p>返回图片所在的相对路径</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "router/admin/uploadRouter.js",
+    "groupTitle": "_file"
+  },
+  {
+    "type": "post",
+    "url": "/admin/user/login",
+    "title": "登录",
+    "name": "login",
+    "group": "_user",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "us",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "ps",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "err",
+            "description": "<p>错误码</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>错误信息</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>令牌</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "router/admin/userrouter.js",
+    "groupTitle": "_user"
+  },
+  {
+    "type": "post",
+    "url": "/admin/user/reg",
+    "title": "注册",
+    "name": "reg",
+    "group": "_user",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "us",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "ps",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "err",
+            "description": "<p>错误码</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>错误信息</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "router/admin/userrouter.js",
+    "groupTitle": "_user"
+  },
+  {
+    "type": "post",
+    "url": "/admin/users/namefind",
+    "title": "通过id查询菜品信息",
+    "name": "namefind",
+    "group": "_users",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>用户名</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "err",
+            "description": "<p>错误码</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>错误信息</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Array",
+            "optional": false,
+            "field": "list",
+            "description": "<p>查询数据</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "router/admin/usersRouter.js",
+    "groupTitle": "_users"
+  },
+  {
+    "type": "post",
+    "url": "/admin/users/usersadd",
+    "title": "用户添加",
+    "name": "usersadd",
+    "group": "_users",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>用户名名</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "us",
+            "description": "<p>账户</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "ps",
+            "description": "<p>密码</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "headimg",
+            "description": "<p>用户头像</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "phone",
+            "description": "<p>用户手机</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "err",
+            "description": "<p>错误码</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>错误信息</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "router/admin/usersRouter.js",
+    "groupTitle": "_users"
+  },
+  {
+    "type": "post",
+    "url": "/admin/users/usersdel",
+    "title": "菜品删除",
+    "name": "usersdel",
+    "group": "_users",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "us",
+            "description": "<p>账户</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "_id",
+            "description": "<p>id</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "ps",
+            "description": "<p>密码</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "err",
+            "description": "<p>错误码</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>错误信息</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "router/admin/usersRouter.js",
+    "groupTitle": "_users"
+  },
+  {
+    "type": "post",
+    "url": "/admin/users/usersfind",
+    "title": "用户查询",
+    "name": "usersfind",
+    "group": "_users",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "page",
+            "description": "<p>页数</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "pageSize",
+            "description": "<p>每页规格</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "err",
+            "description": "<p>错误码</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>成功信息</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Array",
+            "optional": false,
+            "field": "list",
+            "description": "<p>查询数据</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "total",
+            "description": "<p>数据数量</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "router/admin/usersRouter.js",
+    "groupTitle": "_users"
+  },
+  {
+    "type": "post",
+    "url": "/admin/users/usersupdate",
+    "title": "菜品修改",
+    "name": "usersupdate",
+    "group": "_users",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "_id",
+            "description": "<p>id</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>名字</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "us",
+            "description": "<p>账户</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "ps",
+            "description": "<p>密码</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "headimg",
+            "description": "<p>头像</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "phone",
+            "description": "<p>手机</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "err",
+            "description": "<p>错误码</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>错误信息</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "router/admin/usersRouter.js",
+    "groupTitle": "_users"
+  },
+  {
+    "type": "post",
+    "url": "/admin/users/usfind",
+    "title": "通过us查询用户信息",
+    "name": "usfind",
+    "group": "_users",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "us",
+            "description": "<p>账户</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "err",
+            "description": "<p>错误码</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>错误信息</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Array",
+            "optional": false,
+            "field": "list",
+            "description": "<p>查询数据</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "router/admin/usersRouter.js",
+    "groupTitle": "_users"
+  }
+] });
